@@ -4,9 +4,83 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Les petits plats - Consultez nos meilleures recettes de cuisine">
+
+     <!-- Fonts -->
+     <link rel="preconnect" href="https://fonts.gstatic.com" />
+     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;700&display=swap" rel="stylesheet" />
+     <!-- Bootsrap -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" />
+    <link rel="icon" type="image/svg" href="./asset/images/logo.svg">
+    <link rel="stylesheet" href="./asset/css/style.css">
+
     <title>Les petits plats</title>
 </head>
 <body>
+
+    <header class="d-flex justify-content-center">
+        <a href="./index.html">
+            <img class="logo" src="./asset/images/logo.svg" alt="Les petits plats">
+        </a>
+    </header>
+
+    <main id="main">
+        <!-- Barre de recherche -->
+        <div class="container-fluid">
+            <form class="d-flex my-4 form-inline">
+                <input type="search" class="search w-100" placeholder="Rechercher un ingrédient, un titre ou une description">
+                <button type="button" class="btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </div>
+
+        <!-- Tags -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <ul class="selected-tags p-0 d-flex"></ul>
+                </div>
+            </div>
+
+            <div class="row mb-5" id="tags-search">
+                <div class="mt-2 col-12 col-md-6 col-xl-3">
+                    <form class="form__ingredients">
+                        <input class="secondary-search p-4 w-100 search__ingredients closed" placeholder="Ingredients" />
+                        <img class="closed-search" src="./asset/images/closed-search.svg" alt="" />
+                        <img class="opened-search invisible" src="./asset/images/opened-search.svg" alt="" />
+                        <ul class="d-flex pl-4 ingredients__results invisible"></ul>
+                    </form>
+                </div>
+
+                <div class="mt-2 col-12 col-md-6 col-xl-3">
+                    <form class="form__appareils">
+                        <input class="secondary-search p-4 w-100 search__appareils closed" placeholder="Appareils" />
+                        <img class="closed-search" src="./asset/images/closed-search.svg" alt="" />
+                        <img class="opened-search invisible" src="./asset/images/opened-search.svg" alt="" />
+                        <ul class="d-flex pl-4 appliance__results invisible"></ul>
+                    </form>
+                </div>
+
+                <div class="mt-2 col-12 col-md-6 col-xl-3">
+                    <form class="form__ustensiles">
+                      <input class="secondary-search p-4 w-100 search__ustensiles closed" placeholder="Ustensiles" />
+                      <img class="closed-search" src="./asset/images/closed-search.svg" alt="" />
+                      <img class="opened-search invisible" src="./asset/images/opened-search.svg" alt="" />
+                      <ul class="d-flex pl-4 ustensils__results invisible"></ul>
+                    </form>
+                </div>  
+
+            </div>
+        </div>
+
+    </main>
+    
+
+  <!-- Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"></script>
+  <!-- Font awesome -->
+  <script src="https://kit.fontawesome.com/aaca489560.js"></script>
     
 </body>
 </html>
