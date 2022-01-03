@@ -1,6 +1,18 @@
+import {recipesArray } from "./../../data/recipes.js";
 import {Recipes} from "./Recipes.js";
 
-let rec;
-rec = new Recipes(Recipes)
+
+
+
+new Recipes(recipesArray)
+
+
+
+
+
+
+
+
+
 
 

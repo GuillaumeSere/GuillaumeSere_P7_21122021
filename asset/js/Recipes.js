@@ -1,21 +1,22 @@
-import {recipes } from "./../../data/recipes.js";
+import vueRecipes from "./components/vueRecipes.js";
 
 export class Recipes {
     constructor(datas){
         this.recipesList = datas;
-        this.filterRecipes = this.recipesList;
-        this.filterIngredientsTags = [];
-        this.filterApplianceTags = [];
-        this.filterUstensilsTags = [];
-        this.currentInput;
-        this.mainSearchContent;
-        this.selectedTags = { ingredients: [], appliances : [], ustensils : [] };
+        this.ingredients = [];
+      
         console.log(datas)
+
+        const recipesPageElement = document.getElementById("recipes");
+        recipesPageElement.innerHTML = vueRecipes.createListTemplate(this.recipesList);
     }
+
 }
 
-let rec;
-rec = new Recipes(recipes)
+
+
+
+
 
 
 
