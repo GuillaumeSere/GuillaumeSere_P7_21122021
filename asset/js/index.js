@@ -4,7 +4,7 @@ import {Recipes} from "./Recipes.js";
 
 
 
-new Recipes(recipesArray)
+new Recipes(recipesArray);
 
 
 

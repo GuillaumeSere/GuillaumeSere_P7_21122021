@@ -53,6 +53,8 @@ function createListTemplate(recipes) {
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
         `
     });
     return template;
