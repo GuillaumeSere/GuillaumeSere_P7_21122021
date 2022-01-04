@@ -49,6 +49,14 @@ body {
   .col-xl-5 {
     transition: all 400ms ease;
   }
+
+  .img-card{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      margin-top: 10px;
+  }
   
   main .search,
   main button {
