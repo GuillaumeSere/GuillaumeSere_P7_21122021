@@ -59,7 +59,6 @@ function createListTemplate(recipes) {
         </div>
     </div>
         `
-        console.log(recipe.ustensils, recipe.ingredients, recipe.appliance)
     });
     return template;
 }

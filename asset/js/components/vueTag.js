@@ -1,4 +1,4 @@
-function createTagTemplate(recipes, tag){
+/*function createTagTemplate(recipes){
     let template = "";
     recipes.foreach(tag => {
         template +=
@@ -14,4 +14,4 @@ function createTagTemplate(recipes, tag){
 
 export default {
     createTagTemplate
-}
+}*/
