@@ -60,10 +60,8 @@ function createListTemplate(recipes) {
     </div>
         `
     });
-  
     return template;
 }
-
 
 export default {
     createListTemplate

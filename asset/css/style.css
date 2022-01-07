@@ -186,9 +186,11 @@ body {
   height: 364px;
   cursor: pointer;
 }
-#recipes .card__empty {
+ .card__empty {
+  display: none;
   text-align: center;
-  font-size: 26px;
+  font-weight: bold;
+  font-size: 20px;
 }
 #recipes .card__picture {
   height: 178px;

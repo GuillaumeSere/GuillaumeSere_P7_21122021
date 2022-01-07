@@ -11,6 +11,7 @@ export class Recipes {
         const recipesPageElement = document.getElementById("recipes");
         recipesPageElement.innerHTML = vueRecipes.createListTemplate(this.recipesList);
 
+        // Gestion des recherches dans la barre de recherche
         for (const element of datas){
             this.ingredients = element.ingredients;
             this.name = element.name;
@@ -19,12 +20,15 @@ export class Recipes {
             this.appliance = element.appliance;
 
             const searchBar = document.getElementById("search");
+      
             searchBar.addEventListener('keyup', (e) => {
                 const searchString = e.target.value;
+                const error = document.querySelector(".card__empty");
+                error.style.display = "block";
                 const filteredCharacters = datas.filter((character) => {
-                    return ( character.ingredients.includes(searchString) || character.name.includes(searchString) || character.description.includes(searchString));
+                return (character.ingredients.includes(searchString) || character.name.includes(searchString) || character.description.includes(searchString));
                 });
-                recipesPageElement.innerHTML = vueRecipes.createListTemplate(filteredCharacters);
+                 recipesPageElement.innerHTML = vueRecipes.createListTemplate(filteredCharacters);
             });
         }
 
