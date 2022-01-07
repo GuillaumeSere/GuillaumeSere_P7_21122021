@@ -1,9 +1,9 @@
+
 import vueRecipes from "./components/vueRecipes.js";
-import vueTagSearch from "./components/vueTagSearch.js";
-//import vueTag from "./components/vueTag.js";
 
 export class Recipes {
     constructor(datas){
+        
         this.recipesList = datas;
       
         console.log(datas)
@@ -11,18 +11,25 @@ export class Recipes {
         const recipesPageElement = document.getElementById("recipes");
         recipesPageElement.innerHTML = vueRecipes.createListTemplate(this.recipesList);
 
-
         for (const element of datas){
             this.ingredients = element.ingredients;
             this.name = element.name;
             this.description = element.description;
             this.ustensils = element.ustensils;
             this.appliance = element.appliance;
+
+            const searchBar = document.getElementById("search");
+            searchBar.addEventListener('keyup', (e) => {
+                const searchString = e.target.value;
+                const filteredCharacters = datas.filter((character) => {
+                    return ( character.ingredients.includes(searchString) || character.name.includes(searchString) || character.description.includes(searchString));
+                });
+                recipesPageElement.innerHTML = vueRecipes.createListTemplate(filteredCharacters);
+            });
         }
 
-        //const tagIngredients = document.getElementById("tag");
-        //tagIngredients.innerHTML = vueTag.createTagTemplate(this.recipesList);
-
+       //const tagIngredients = document.getElementById("tags-search");
+       //tagIngredients.innerHTML = vueTagSearch.createTagTemplate(this.ingredients ,this.ustensils, this.appliance);
 
         // Gestion des filtres ingredients
         const formIngredient = document.getElementById("form-ingredient");

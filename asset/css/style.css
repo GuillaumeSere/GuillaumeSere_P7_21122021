@@ -234,6 +234,7 @@ body {
   flex-wrap: wrap;
 }
 .selected-tags li {
+  display: none;
   font-size: 16px;
   border-radius: 5px;
   margin-right: 20px;

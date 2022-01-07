@@ -14,7 +14,7 @@ function createListTemplate(recipes) {
                     <div class="card__title">${recipe.name}</div>
                     <div class="card__duration">
                         <img class="logo" src="./asset/images/timer.svg" alt="Recipe duration">
-                        ${recipe.time}
+                        ${recipe.time} min
                     </div>
                 </div>
                 <div class="d-flex justify-content-between card__description">
@@ -22,7 +22,7 @@ function createListTemplate(recipes) {
                         <li class="d-flex flex-wrap">
                             <p class="card__ingredients__name"></p>
                             <div class="d-flex">
-                                <p class="card__ingredients__quantity">${recipe.ingredients[0].ingredient} : ${recipe.ingredients[0].quantity}</p>
+                                <p class="card__ingredients__quantity">${recipe.ingredients[0].ingredient} : ${recipe.ingredients[0].quantity}&ensp;</p>
                                 <p class="card__ingredients__unit">${recipe.ingredients[0].unit}</p>
                             </div>
                         </li>
@@ -35,7 +35,7 @@ function createListTemplate(recipes) {
                         <li class="d-flex flex-wrap">
                             <p class="card__ingredients__name"></p>
                             <div class="d-flex">
-                                <p class="card__ingredients__quantity">${recipe.ingredients[2].ingredient} : ${recipe.ingredients[2].quantity}</p>
+                                <p class="card__ingredients__quantity">${recipe.ingredients[2].ingredient} : ${recipe.ingredients[2].quantity}&ensp;</p>
                                 <p class="card__ingredients__unit">${recipe.ingredients[2].unit}</p>
                             </div>
                         </li>
@@ -60,6 +60,7 @@ function createListTemplate(recipes) {
     </div>
         `
     });
+  
     return template;
 }
 

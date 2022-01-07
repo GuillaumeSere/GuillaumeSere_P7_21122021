@@ -1,6 +1,6 @@
 function createIngredientTemplate(ingredients) {
     let template = "";
-    ingredients.foreach(ingredient => {
+    ingredients.forEach(ingredient => {
         template +=
         `
         <div class="mt-2 col-12 col-md-6 col-xl-3">

@@ -1,6 +1,6 @@
-/*function createTagTemplate(recipes){
+function createTagTemplate(recipes){
     let template = "";
-    recipes.foreach(tag => {
+    recipes.forEach(tag => {
         template +=
         `
         <li class="p-3 selected-tags__ingredients">${tag.ingredients}</li>
@@ -14,4 +14,4 @@
 
 export default {
     createTagTemplate
-}*/
+}
