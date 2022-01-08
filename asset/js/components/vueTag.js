@@ -1,14 +1,13 @@
-function createTagTemplate(recipes){
+
+function createTagTemplate(recipe){
     let template = "";
-    recipes.forEach(tag => {
         template +=
         `
-        <li class="p-3 selected-tags__ingredients">${tag.ingredients}</li>
-        <li class="p-3 selected-tags__appliances">${tag.appliances}</li>
-        <li class="p-3 selected-tags__ustensils">${tag.ustensils}</li>
-        `
-        console.log(tag)
-    }) ;
+        <li class="p-3 selected-tags__ingredients">${recipe.ingredient}</li>
+        <li class="p-3 selected-tags__appliances">${recipe.appliance}</li>
+        <li class="p-3 selected-tags__ustensils">${recipe.ustensils}</li>
+        `;
+        console.log(recipe)
     return template;
 }
 

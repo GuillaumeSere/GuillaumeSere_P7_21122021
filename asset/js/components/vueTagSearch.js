@@ -1,6 +1,6 @@
-function createIngredientTemplate(ingredients) {
+function createIngredientTemplate(recipes) {
     let template = "";
-    ingredients.forEach(ingredient => {
+    recipes.forEach(recipe => {
         template +=
         `
         <div class="mt-2 col-12 col-md-6 col-xl-3">
@@ -9,7 +9,7 @@ function createIngredientTemplate(ingredients) {
             <img class="closed-search close-ingredient" src="./asset/images/closed-search.svg" alt="" />
             <img class="opened-search open-ingredient invisible" src="./asset/images/opened-search.svg" alt="" />
             <ul class="d-flex pl-4 ingredients__results invisible">
-                <li>${ingredient.ingredient}</li>
+                <li></li>
             </ul>
         </form>
         `

@@ -1,4 +1,4 @@
-
+import vueTag from "./components/vueTag.js";
 import vueRecipes from "./components/vueRecipes.js";
 
 export class Recipes {
@@ -19,21 +19,21 @@ export class Recipes {
             this.ustensils = element.ustensils;
             this.appliance = element.appliance;
 
-            const searchBar = document.getElementById("search");
-      
-            searchBar.addEventListener('keyup', (e) => {
-                const searchString = e.target.value;
-                const error = document.querySelector(".card__empty");
-                error.style.display = "block";
-                const filteredCharacters = datas.filter((character) => {
-                return (character.ingredients.includes(searchString) || character.name.includes(searchString) || character.description.includes(searchString));
-                });
-                 recipesPageElement.innerHTML = vueRecipes.createListTemplate(filteredCharacters);
+        const searchBar = document.getElementById("search");
+        searchBar.addEventListener('keyup', (e) => {
+            const searchString = e.target.value;
+            const error = document.querySelector(".card__empty");
+            error.style.display = "block";
+            const filteredCharacters = datas.filter((character) => {
+            return (character.ingredients.includes(searchString.slice(1)) || character.name.includes(searchString.slice(1)) || character.description.includes(searchString.slice(1)));
             });
-        }
+                recipesPageElement.innerHTML = vueRecipes.createListTemplate(filteredCharacters);
+        });
 
-       //const tagIngredients = document.getElementById("tags-search");
-       //tagIngredients.innerHTML = vueTagSearch.createTagTemplate(this.ingredients ,this.ustensils, this.appliance);
+        // Injectien des tags
+        const tagIngredients = document.getElementById("tag");
+        tagIngredients.innerHTML = vueTag.createTagTemplate(this.appliance);
+    }
 
         // Gestion des filtres ingredients
         const formIngredient = document.getElementById("form-ingredient");
