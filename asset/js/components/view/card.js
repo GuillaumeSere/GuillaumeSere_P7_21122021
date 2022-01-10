@@ -17,7 +17,6 @@ export const createCardsForDom = (recipe) => {
     const resume = createDomElement("resume", "p");
     
     cardImg.classList.add("bg-secondary")
-    cardBox.classList.add("bg-light")
     clock.classList.add("bi-clock")
     
     titleCard.innerHTML = recipe.name

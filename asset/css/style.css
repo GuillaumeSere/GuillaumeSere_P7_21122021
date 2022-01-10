@@ -128,6 +128,7 @@ header img {
 }
 
 .optionContainer li {
+    list-style: none;
     color: white;
     padding-left: -20px;
     font-size: 13px;
@@ -142,7 +143,7 @@ header img {
 }
 
 .optionContainer li:hover {
-    color: springgreen;
+    color: rgb(212, 206, 206);
 }
 
 .dropdownOrange .optionContainer3 {
@@ -259,18 +260,22 @@ input:focus {
 }
 
 .tagIngredients {
+    width:150px;
     background-color: rgb(29, 110, 250);
 }
 
 .tagAppareil {
+    width: 150px;
     background-color: rgb(50, 205, 159);
 }
 
 .tagUstensiles {
+    width: 150px;
     background-color: salmon;
 }
 
 .tagTxt {
+    font-size:16px;
     margin-right: 5px;
 }
 
@@ -297,8 +302,9 @@ input:focus {
 }
 
 .cardBox {
+    background: #E7E7E7;
     padding: 20px;
-    width: 350px;
+    width: 400px;
     height: 250px;
     border-radius: 0 0 8px 8px;
 }
@@ -314,6 +320,7 @@ input:focus {
 .titleTimeCard,
 .timeCard,
 .recetteCard {
+    font-weight: bold;
     display: flex;
     flex-direction: row;
 }
@@ -345,8 +352,9 @@ input:focus {
 
 .cardResume {
     position: relative;
-    right: -19px;
-    max-width: 210px;
+    right: -70px;
+    max-height: 210px;
+    max-width:210px ;
     overflow-y: scroll;
     overflow-x: hidden;
     max-height: 250px;
@@ -363,11 +371,10 @@ input:focus {
 }
 
 .cardImg {
-    background: url(./../images/logo.svg) no-repeat;
+    background: url(./../images/Vector.svg) no-repeat;
     background-position: center;
     background-size: contain;
-    padding: 20px;
-    width: 350px;
+    width: 400px;
     height: 180px;
     border-radius: 8px 8px 0 0;
 }
