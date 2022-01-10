@@ -1,4 +1,3 @@
-// import { createDomElement } from "../utils/tools.js"
 import { DATA } from "./../../../data/dataHandler.js"
 import { displayRecipes, removeDuplicateItemInArray, displayContentsDropdown, displayAppareilDataIfTrue } from "../utils/tools.js"
 import { createTag } from "../components/view/tag.js"

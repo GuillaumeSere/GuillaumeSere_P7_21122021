@@ -1,8 +1,5 @@
-// import { createDomElement } from "../utils/tools.js"
 import { DATA } from "../../../data/dataHandler.js"
 import { displayRecipes } from "../utils/tools.js"
-
-
 
 
 /*‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡ */

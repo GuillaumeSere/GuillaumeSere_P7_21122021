@@ -35,17 +35,24 @@ header img {
 }
 
 .inputSearch {
+    font-weight:200;
+    background: #E7E7E7;
     overflow: hidden;
-    text-overflow: ellipsis;
+    border: none;
     white-space: nowrap;
+    height: 69px;
     padding-right: 50px;
+}
+
+.inputSearch:focus{
+    background: #E7E7E7;
 }
 
 .bi-search {
     position: relative;
     right: 30px;
-    top: 5px;
-    font-weight: bold;
+    top: 15px;
+    font-weight: bolder;
     font-size: 20px;
 }
 
@@ -291,7 +298,6 @@ input:focus {
 
 .zoneCards {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
     width: 80vw;
@@ -323,6 +329,10 @@ input:focus {
     font-weight: bold;
     display: flex;
     flex-direction: row;
+}
+
+.timeCard{
+    margin-right: -60px;
 }
 
 .titleTimeCard {
@@ -373,7 +383,7 @@ input:focus {
 .cardImg {
     background: url(./../images/Vector.svg) no-repeat;
     background-position: center;
-    background-size: contain;
+    background-size:100px 100px contain;
     width: 400px;
     height: 180px;
     border-radius: 8px 8px 0 0;
