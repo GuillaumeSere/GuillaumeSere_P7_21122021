@@ -8,6 +8,7 @@ import { displayRecipes } from "../utils/tools.js"
 
 export const InputMainListener = () => {
     const inputMain = document.querySelector('#inputSearch')
+    const cardMessage = document.querySelector('#cardMessage')
 
     // ===================
     //      A L'INPUT
@@ -32,6 +33,7 @@ export const InputMainListener = () => {
                         break
                     } else {
                         recipe.display = false
+                        cardMessage.style.display = "block"
                     }
                 }
 
@@ -70,6 +72,7 @@ export const InputMainListener = () => {
         } else {
             // on affiche toutes les cards => display:true
             DATA.forEach(recipe => { recipe.display = true })
+            cardMessage.style.display = "none"
         }
         displayRecipes(DATA)
     })

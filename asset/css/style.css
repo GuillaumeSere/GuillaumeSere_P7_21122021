@@ -364,7 +364,6 @@ input:focus {
     right: -70px;
     max-height: 210px;
     max-width:210px ;
-    overflow-y: scroll;
     overflow-x: hidden;
     max-height: 250px;
 }
@@ -376,7 +375,7 @@ input:focus {
 .cardResume p {
     font-size: 10px;
     text-overflow: ellipsis;
-    max-height: 170px;
+    max-height: 170px;  
 }
 
 .cardImg {
@@ -386,6 +385,11 @@ input:focus {
     width: 400px;
     height: 180px;
     border-radius: 8px 8px 0 0;
+}
+
+#cardMessage{
+    display: none;
+    font-size: 20px;
 }
 
 footer {
