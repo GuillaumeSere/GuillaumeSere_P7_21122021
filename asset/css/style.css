@@ -109,7 +109,7 @@ header img {
 .optionContainer1 {
     background-color: rgb(29, 110, 250);
     width: 1330px;
-    height: 450px;
+    height: 350px;
 }
 
 .optionContainer1::-webkit-scrollbar{
@@ -269,17 +269,17 @@ input:focus {
 }
 
 .tagIngredients {
-    width:150px;
+    width:160px;
     background-color: rgb(29, 110, 250);
 }
 
 .tagAppareil {
-    width: 150px;
+    width: 160px;
     background-color: rgb(50, 205, 159);
 }
 
 .tagUstensiles {
-    width: 150px;
+    width: 160px;
     background-color: salmon;
 }
 
