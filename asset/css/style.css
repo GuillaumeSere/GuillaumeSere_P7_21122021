@@ -178,7 +178,7 @@ header img {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 10px 5px 5px 5px;
+    padding: 15px 5px 5px 5px;
 }
 
 .dropFirst p {
@@ -303,7 +303,7 @@ input:focus {
 }
 
 .bg-secondary{
-    --bs-bg-opacity: .5;
+    --bs-bg-opacity: 0.5;
 }
 
 .cardContainer {
