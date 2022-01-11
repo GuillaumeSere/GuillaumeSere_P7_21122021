@@ -75,8 +75,8 @@ header img {
     margin-bottom: 20px;
     border: none;
     border-radius: 5px;
-    width: 170px;
-    height: 50px;
+    width: 250px;
+    height: 60px;
     cursor: pointer;
 }
 
@@ -108,9 +108,12 @@ header img {
 
 .optionContainer1 {
     background-color: rgb(29, 110, 250);
-    width: 530px;
-    max-height: 350px;
-    overflow-x: scroll;
+    width: 1330px;
+    height: 350px;
+}
+
+.optionContainer1::-webkit-scrollbar{
+    display: none;
 }
 
 .optionContainer2 {
@@ -178,7 +181,7 @@ header img {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 10px 5px 5px 5px;
+    padding: 15px 5px 5px 5px;
 }
 
 .dropFirst p {
@@ -266,17 +269,17 @@ input:focus {
 }
 
 .tagIngredients {
-    width:150px;
+    width:160px;
     background-color: rgb(29, 110, 250);
 }
 
 .tagAppareil {
-    width: 150px;
+    width: 160px;
     background-color: rgb(50, 205, 159);
 }
 
 .tagUstensiles {
-    width: 150px;
+    width: 160px;
     background-color: salmon;
 }
 
@@ -288,6 +291,7 @@ input:focus {
 .bi-x-circle {
     font-size: 18px;
     cursor: pointer;
+    padding: 10px;
 }
 
 .sectionCards {
@@ -300,6 +304,10 @@ input:focus {
     justify-content: space-between;
     flex-wrap: wrap;
     width: 80vw;
+}
+
+.bg-secondary{
+    --bs-bg-opacity: 0.5;
 }
 
 .cardContainer {
@@ -356,7 +364,7 @@ input:focus {
 
 .ingredientsCard p {
     margin-bottom: 0;
-    font-size: 10px;
+    font-size: 11px;
 }
 
 .cardResume {
@@ -366,16 +374,17 @@ input:focus {
     max-width:210px ;
     overflow-x: hidden;
     max-height: 250px;
+    scrollbar-width: none;
 }
 
-.cardResume::-webkit-scrollbar:window-inactive {
+.cardResume::-webkit-scrollbar{
     display: none;
 }
 
 .cardResume p {
-    font-size: 10px;
+    font-size: 12px;
     text-overflow: ellipsis;
-    max-height: 170px;  
+    max-height: 145px;
 }
 
 .cardImg {
