@@ -35,17 +35,24 @@ header img {
 }
 
 .inputSearch {
+    font-weight:200;
+    background: #E7E7E7;
     overflow: hidden;
-    text-overflow: ellipsis;
+    border: none;
     white-space: nowrap;
+    height: 69px;
     padding-right: 50px;
+}
+
+.inputSearch:focus{
+    background: #E7E7E7;
 }
 
 .bi-search {
     position: relative;
     right: 30px;
-    top: 5px;
-    font-weight: bold;
+    top: 15px;
+    font-weight: bolder;
     font-size: 20px;
 }
 
@@ -128,6 +135,7 @@ header img {
 }
 
 .optionContainer li {
+    list-style: none;
     color: white;
     padding-left: -20px;
     font-size: 13px;
@@ -142,7 +150,7 @@ header img {
 }
 
 .optionContainer li:hover {
-    color: springgreen;
+    color: rgb(212, 206, 206);
 }
 
 .dropdownOrange .optionContainer3 {
@@ -242,7 +250,6 @@ input:focus {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-left: 10%;
     margin-bottom: 20px;
 }
 
@@ -259,18 +266,22 @@ input:focus {
 }
 
 .tagIngredients {
+    width:150px;
     background-color: rgb(29, 110, 250);
 }
 
 .tagAppareil {
+    width: 150px;
     background-color: rgb(50, 205, 159);
 }
 
 .tagUstensiles {
+    width: 150px;
     background-color: salmon;
 }
 
 .tagTxt {
+    font-size:16px;
     margin-right: 5px;
 }
 
@@ -286,7 +297,6 @@ input:focus {
 
 .zoneCards {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
     width: 80vw;
@@ -297,8 +307,9 @@ input:focus {
 }
 
 .cardBox {
+    background: #E7E7E7;
     padding: 20px;
-    width: 350px;
+    width: 400px;
     height: 250px;
     border-radius: 0 0 8px 8px;
 }
@@ -314,8 +325,13 @@ input:focus {
 .titleTimeCard,
 .timeCard,
 .recetteCard {
+    font-weight: bold;
     display: flex;
     flex-direction: row;
+}
+
+.timeCard{
+    margin-right: -60px;
 }
 
 .titleTimeCard {
@@ -345,9 +361,9 @@ input:focus {
 
 .cardResume {
     position: relative;
-    right: -19px;
-    max-width: 210px;
-    overflow-y: scroll;
+    right: -70px;
+    max-height: 210px;
+    max-width:210px ;
     overflow-x: hidden;
     max-height: 250px;
 }
@@ -359,17 +375,21 @@ input:focus {
 .cardResume p {
     font-size: 10px;
     text-overflow: ellipsis;
-    max-height: 170px;
+    max-height: 170px;  
 }
 
 .cardImg {
-    background: url(./../images/logo.svg) no-repeat;
+    background: url(./../images/Vector.svg) no-repeat;
     background-position: center;
-    background-size: contain;
-    padding: 20px;
-    width: 350px;
+    background-size:100px 100px contain;
+    width: 400px;
     height: 180px;
     border-radius: 8px 8px 0 0;
+}
+
+#cardMessage{
+    display: none;
+    font-size: 20px;
 }
 
 footer {

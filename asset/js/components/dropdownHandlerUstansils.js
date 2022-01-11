@@ -1,4 +1,3 @@
-// import { createDomElement } from "../utils/tools.js"
 import { DATA } from "../../../data/dataHandler.js"
 import { displayRecipes, removeDuplicateItemInArrayUstensils, displayContentsDropdown, displayUstansilDataIfTrue } from "../utils/tools.js"
 import { createTag } from "../components/view/tag.js"
@@ -25,7 +24,7 @@ export const dropDownUstansilsListener = () => {
     dropdownContainer.addEventListener('click', () => {
         const ust = []
 
-        // on récupère tous les ingrédients des uniquement ustensils qui sont en display = true
+        // on récupère tous les ustensils qui sont en display = true
         displayUstansilDataIfTrue(DATA, ust)
 
         // on retire les doublons
@@ -52,7 +51,7 @@ export const dropDownUstansilsListener = () => {
             const taping = input.value.toLowerCase();
             const ust = []
 
-            // on récupère tous les ingrédients des uniquement recettes qui sont en display = true
+            // on récupère tous les ingrédients des  recettes qui sont en display = true
             displayUstansilDataIfTrue(DATA, ust)
 
 
