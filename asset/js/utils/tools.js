@@ -88,7 +88,7 @@ export const displayContentsDropdown = (optionContainer, input, arrow, dropdown,
         input.classList.add('displayNone')
         arrow.classList.remove('arrowOpen')
         arrow.classList.add('arrowClose')
-        dropdown.style.width = "170px"
+        dropdown.style.width = "250px"
     }
 }
 
