@@ -302,6 +302,10 @@ input:focus {
     width: 80vw;
 }
 
+.bg-secondary{
+    --bs-bg-opacity: .5;
+}
+
 .cardContainer {
     margin-top: 20px;
 }
