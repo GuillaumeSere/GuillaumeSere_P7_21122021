@@ -19,6 +19,7 @@ export const InputMainListener = () => {
         // Si il y a plus de 2 caractères
         if (inputMain.value.length > 2) {
             DATA.forEach(recipe => { recipe.display = false })
+            cardMessage.style.display = "block"
             displayRecipes(DATA)
 
             // chercher dans les ingredients
@@ -30,10 +31,10 @@ export const InputMainListener = () => {
 
                     if (ingredient.ingredient.toLowerCase().includes(mainInputValue)) {
                         recipe.display = true
+                        cardMessage.style.display = "none"
                         break
                     } else {
                         recipe.display = false
-                        cardMessage.style.display = "block"
                     }
                 }
 
@@ -43,6 +44,7 @@ export const InputMainListener = () => {
 
                     if (ustensil.toLowerCase().includes(mainInputValue)) {
                         recipe.display = true
+                        cardMessage.style.display = "none"
                         break
                     } else {
                         recipe.display = false
@@ -53,6 +55,7 @@ export const InputMainListener = () => {
                 const appliance = recipe.appliance
                 if (appliance.toLowerCase().includes(mainInputValue)) {
                     recipe.display = true
+                    cardMessage.style.display = "none"
                 } else {
                     recipe.display = false
                 }
@@ -63,8 +66,10 @@ export const InputMainListener = () => {
 
                 if (titre.toLowerCase().includes(mainInputValue)) {
                     recipe.display = true
+                    cardMessage.style.display = "none"
                 } else if (description.toLowerCase().includes(mainInputValue)) {
                     recipe.display = true
+                    cardMessage.style.display = "none"
                 } else {
                     recipe.display = false
                 }

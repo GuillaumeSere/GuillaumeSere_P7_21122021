@@ -50,10 +50,10 @@ header img {
 
 .bi-search {
     position: relative;
-    right: 30px;
+    right: 40px;
     top: 15px;
     font-weight: bolder;
-    font-size: 20px;
+    font-size: 24px;
 }
 
 .displayNone {
@@ -347,6 +347,10 @@ input:focus {
     margin-bottom: 0;
 }
 
+.titleCard{
+    margin-left: -10px;
+}
+
 .time {
     font-weight: bold;
     min-width: 55px;
@@ -357,6 +361,7 @@ input:focus {
 }
 
 .ingredientsCard {
+    margin-left: -10px;
     width: 400px;
     overflow-x: hidden;
     max-height: 210px;
@@ -382,6 +387,7 @@ input:focus {
 }
 
 .cardResume p {
+    margin-right:10px;
     font-size: 12px;
     text-overflow: ellipsis;
     max-height: 145px;

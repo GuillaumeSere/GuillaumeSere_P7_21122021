@@ -3,8 +3,6 @@ import { displayRecipes, removeDuplicateItemInArray, displayContentsDropdown, di
 import { createTag } from "../components/view/tag.js"
 
 
-
-
 /*‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡ */
 //                                  DROPDOWN INGREDIENTS
 /*‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡ */
@@ -17,20 +15,19 @@ export const dropDownIngredientsListener = () => {
     const listElmt = document.querySelector('.listElmt1')
     const zoneTag = document.querySelector(".zoneTag")
 
-
     // ===================
     //      AU CLICK
     // ===================
     dropdownContainer.addEventListener('click', () => {
         const ingred = []
 
-        // on récupère tous les ingrédients des uniquement recettes qui sont en display = true
+        // on récupère tous les ingrédients  uniquement recettes qui sont en display = true
         displayIngrediantDataIfTrue(DATA, ingred)
 
         // on retire les doublons
         const filteredArray = removeDuplicateItemInArray(ingred)
 
-        // on le remplie l'optionContainer
+        // on  remplie l'optionContainer
         listElmt.innerHTML = ""
         filteredArray.forEach(ingredient => {
             listElmt.innerHTML += `<li class="elmt" id="${ingredient}">${ingredient}</li>`
@@ -39,7 +36,6 @@ export const dropDownIngredientsListener = () => {
         // on affiche l'optionContainer
         displayContentsDropdown(optionContainer, input, arrow, dropdownContainer, 530)
     })
-
 
     // ===================
     //      A L'INPUT
@@ -53,12 +49,11 @@ export const dropDownIngredientsListener = () => {
             // on récupère tous les ingrédients des recettes qui sont uniquement en display = true
             displayIngrediantDataIfTrue(DATA, ingred)
 
-
             // on retire les doublons
             const filteredArray = removeDuplicateItemInArray(ingred)
             const ingredientsToDisplay = []
 
-            // on le remplie l'optionContainer
+            // on  remplie l'optionContainer
             filteredArray.forEach(ingredient => {
                 if (ingredient.toLowerCase().includes(taping)) {
                     ingredientsToDisplay.push(ingredient)
@@ -75,9 +70,8 @@ export const dropDownIngredientsListener = () => {
             // si y'a moins de 2 caractères
             const ingred = []
 
-            // on récupère tous les ingrédients des uniquement recettes qui sont en display = true
+            // on récupère tous les ingrédients des  recettes qui sont en display = true
             displayIngrediantDataIfTrue(DATA, ingred)
-
 
             // on retire les doublons
             const filteredArray = removeDuplicateItemInArray(ingred)
@@ -89,7 +83,6 @@ export const dropDownIngredientsListener = () => {
             })
         }
     })
-
 
     // quand on click sur un <li> ça crée un tag
     listElmt.addEventListener("click", (e) => {
