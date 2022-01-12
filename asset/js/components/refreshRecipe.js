@@ -2,6 +2,8 @@ import { DATA } from "../../../data/dataHandler.js"
 import { displayRecipes } from "../utils/tools.js"
 
 export const refresh = () => {
+
+    DATA.forEach(recipe => { recipe.display = true });
  
     for (var i = 0; i > DATA.length; i++){
         var recipe = DATA[i]

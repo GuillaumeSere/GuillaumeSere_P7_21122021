@@ -14,6 +14,8 @@ export const InputMainListener = () => {
     //      A L'INPUT
     // ===================
     inputMain.addEventListener('input', () => {
+
+        DATA.forEach(recipe => { recipe.display = true });
         const mainInputValue = inputMain.value.toLowerCase();
 
         // Si il y a plus de 2 caractères
