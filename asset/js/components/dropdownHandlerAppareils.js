@@ -3,8 +3,6 @@ import { displayRecipes, removeDuplicateItemInArray, displayContentsDropdown, di
 import { createTag } from "../components/view/tag.js"
 
 
-
-
 /*‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡ */
 //                                  DROPDOWN APPAREIL
 /*‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡ */
@@ -38,7 +36,6 @@ export const dropDownAppareilListener = () => {
         // on affiche l'optionContainer
         displayContentsDropdown(optionContainer, input, arrow, dropdownContainer, 250)
     })
-
 
     // ===================
     //      A L'INPUT
@@ -77,7 +74,6 @@ export const dropDownAppareilListener = () => {
             // on récupère tous les ingrédients des recettes qui sont  uniquement en display = true
             displayAppareilDataIfTrue(DATA, app)
 
-
             // on retire les doublons
             const filteredArray = removeDuplicateItemInArray(app)
             listElmt.innerHTML = ""
@@ -99,12 +95,12 @@ export const dropDownAppareilListener = () => {
         // modifier les data pour mettre a display false les recettes qui n'ont pas le e.target.innerHTML (tag) pour chaque recette
         for (let i = 0; i < DATA.length; i++) {
             const recipe = DATA[i]
-            console.log(DATA[i]);
+         
             // on va vérifier chaque ingrédient des recettes qui sont déjà affichée/sélèctionnée
             if (recipe.display == true) {
                 for (let j = 0; j < recipe.appliance.length; j++) {
                     const appareil = recipe.appliance
-                    console.log(recipe.appliance);
+                 
                     if (appareil.toLowerCase() === selectedTag.toLowerCase()) {
                         recipe.display = true
                         break

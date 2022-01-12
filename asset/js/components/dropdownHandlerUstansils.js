@@ -3,8 +3,6 @@ import { displayRecipes, removeDuplicateItemInArrayUstensils, displayContentsDro
 import { createTag } from "../components/view/tag.js"
 
 
-
-
 /*‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡ */
 //                                  DROPDOWN USTENSILES
 /*‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡ */
@@ -40,7 +38,6 @@ export const dropDownUstansilsListener = () => {
         displayContentsDropdown(optionContainer, input, arrow, dropdownContainer, 430)
     })
 
-
     // ===================
     //      A L'INPUT
     // ===================
@@ -53,7 +50,6 @@ export const dropDownUstansilsListener = () => {
 
             // on récupère tous les ingrédients des  recettes qui sont en display = true
             displayUstansilDataIfTrue(DATA, ust)
-
 
             // on retire les doublons
             const filteredArray = removeDuplicateItemInArrayUstensils(ust)
@@ -76,15 +72,14 @@ export const dropDownUstansilsListener = () => {
             // si y'a moins de 2 caractères
             const ust = []
 
-            // on récupère tous les ingrédients des uniquement recettes qui sont en display = true
+            // on récupère tous les ingrédients des  recettes qui sont en display = true
             displayUstansilDataIfTrue(DATA, ust)
-
 
             // on retire les doublons
             const filteredArray = removeDuplicateItemInArrayUstensils(ust)
             listElmt.innerHTML = ""
 
-            // on le remplie l'optionContainer
+            // on  remplie l'optionContainer
             filteredArray.forEach(ustensil => {
                 listElmt.innerHTML += `<li class="elmt" id="${ustensil}">${ustensil}</li>`
             })
@@ -100,12 +95,12 @@ export const dropDownUstansilsListener = () => {
         // modifier les data pour mettre a display false les recettes qui n'ont pas le e.target.innerHTML (tag) pour chaque recette
         for (let i = 0; i < DATA.length; i++) {
             const recipe = DATA[i]
-            console.log(DATA[i]);
+         
             // on va vérifier chaque ingrédient des recettes qui sont déjà affichée/sélèctionnée
             if (recipe.display == true) {
                 for (let j = 0; j < recipe.ustensils.length; j++) {
                     const ustensile = recipe.ustensils[j]
-                    console.log(recipe.ustensils[j]);
+            
                     if (ustensile.toLowerCase() === selectedTag.toLowerCase()) {
                         recipe.display = true
                         break
