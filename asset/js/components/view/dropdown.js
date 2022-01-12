@@ -1,4 +1,4 @@
-export const createDropdown = (name, id, nb) => {
+export function createDropdown(name, id, nb){
     return `  
     <div class="selectContainer">
         <div role="button" aria-haspopup="listbox" aria-expanded class="dropdown dropdown--${name}" name="sort_by" id="sort_by">

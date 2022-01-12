@@ -1,20 +1,20 @@
 import { createDomElement } from "./../../utils/tools.js"
 
-export const createCardsForDom = (recipe) => {
+export function createCardsForDom(recipe) {
 
-    const cardContainer = createDomElement("cardContainer", "div");
-    const cardImg = createDomElement("cardImg", "div");
-    const cardBox = createDomElement("cardBox", "div");
-    const bodyCard = createDomElement("bodyCard", "div");
-    const titleTimeCard = createDomElement("titleTimeCard", "div");
-    const titleCard = createDomElement("titleCard", "p");
-    const timeCard = createDomElement("timeCard", "div");
-    const clock = createDomElement("bi", "i");
-    const time = createDomElement("time", "p");
-    const recetteCard = createDomElement("recetteCard", "div");
-    const ingredientsCard = createDomElement("ingredientsCard", "div");
-    const cardResume = createDomElement("cardResume", "div");
-    const resume = createDomElement("resume", "p");
+    var cardContainer = createDomElement("cardContainer", "div");
+    var cardImg = createDomElement("cardImg", "div");
+    var cardBox = createDomElement("cardBox", "div");
+    var bodyCard = createDomElement("bodyCard", "div");
+    var titleTimeCard = createDomElement("titleTimeCard", "div");
+    var titleCard = createDomElement("titleCard", "p");
+    var timeCard = createDomElement("timeCard", "div");
+    var clock = createDomElement("bi", "i");
+    var time = createDomElement("time", "p");
+    var recetteCard = createDomElement("recetteCard", "div");
+    var ingredientsCard = createDomElement("ingredientsCard", "div");
+    var cardResume = createDomElement("cardResume", "div");
+    var resume = createDomElement("resume", "p");
     
     cardImg.classList.add("bg-secondary")
     clock.classList.add("bi-clock")
@@ -37,13 +37,13 @@ export const createCardsForDom = (recipe) => {
     cardResume.append(resume)
 
 
-    for (let j = 0; j < recipe.ingredients.length; j++) {
+    for (var j = 0; j < recipe.ingredients.length; j++) {
 
-        const allingredientsCard = createDomElement("allingredientsCard", "p");
+        var allingredientsCard = createDomElement("allingredientsCard", "p");
 
-        const ingredient = recipe.ingredients[j].ingredient
-        const quantity = recipe.ingredients[j].quantity
-        const unit = recipe.ingredients[j].unit
+        var ingredient = recipe.ingredients[j].ingredient
+        var quantity = recipe.ingredients[j].quantity
+        var unit = recipe.ingredients[j].unit
 
         if (quantity == null) {
             allingredientsCard.innerHTML = ingredient

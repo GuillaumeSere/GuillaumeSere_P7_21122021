@@ -18,18 +18,21 @@ export const InputMainListener = () => {
 
         // Si il y a plus de 2 caractères
         if (inputMain.value.length > 2) {
-            DATA.forEach(recipe => { recipe.display = false })
-            cardMessage.style.display = "block"
+            for (let i = 0; i < DATA.length; i++){
+                const recipe = DATA[i];
+                recipe.display = false
+                cardMessage.style.display = "block"
+            }
             displayRecipes(DATA)
 
             // chercher dans les ingredients
-            for (let i = 0; i < DATA.length; i++) {
-                const recipe = DATA[i]
+            for (let k = 0; k < DATA.length; k++) {
+                const recipe = DATA[k]
                     // on va vérifier chaque ingrédient des recettes qui sont déjà affichée/sélèctionnée
-                for (let j = 0; j < recipe.ingredients.length; j++) {
-                    const ingredient = recipe.ingredients[j]
+                for (let l = 0; l < recipe.ingredients.length; l++) {
+                    const ingredient = recipe.ingredients[l]
 
-                    if (ingredient.ingredient.toLowerCase().includes(mainInputValue)) {
+                    if (ingredient.ingredient.toLowerCase().indexOf(mainInputValue) >= 0) {
                         recipe.display = true
                         cardMessage.style.display = "none"
                         break
@@ -42,7 +45,7 @@ export const InputMainListener = () => {
                 for (let j = 0; j < recipe.ustensils.length; j++) {
                     const ustensil = recipe.ustensils[j]
 
-                    if (ustensil.toLowerCase().includes(mainInputValue)) {
+                    if (ustensil.toLowerCase().indexOf(mainInputValue) >= 0) {
                         recipe.display = true
                         cardMessage.style.display = "none"
                         break
@@ -53,7 +56,7 @@ export const InputMainListener = () => {
 
                 // chercher dans les appareils
                 const appliance = recipe.appliance
-                if (appliance.toLowerCase().includes(mainInputValue)) {
+                if (appliance.toLowerCase().indexOf(mainInputValue) >= 0) {
                     recipe.display = true
                     cardMessage.style.display = "none"
                 } else {
@@ -64,10 +67,10 @@ export const InputMainListener = () => {
                 const titre = recipe.name
                 const description = recipe.description
 
-                if (titre.toLowerCase().includes(mainInputValue)) {
+                if (titre.toLowerCase().indexOf(mainInputValue) >= 0) {
                     recipe.display = true
                     cardMessage.style.display = "none"
-                } else if (description.toLowerCase().includes(mainInputValue)) {
+                } else if (description.toLowerCase().indexOf(mainInputValue) >= 0) {
                     recipe.display = true
                     cardMessage.style.display = "none"
                 } else {
@@ -76,8 +79,12 @@ export const InputMainListener = () => {
             }
         } else {
             // on affiche toutes les cards => display:true
-            DATA.forEach(recipe => { recipe.display = true })
-            cardMessage.style.display = "none"
+            
+            for (let q = 0; q > DATA.length; q++){
+                const recipe = DATA[q]
+                recipe.display = true
+                cardMessage.style.display = "none"
+            }
         }
         displayRecipes(DATA)
     })

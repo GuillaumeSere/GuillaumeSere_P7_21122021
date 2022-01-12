@@ -4,3 +4,4 @@ export let DATA = recipes;
 DATA.forEach(recipe => {
     recipe.display = true;
 });
+
