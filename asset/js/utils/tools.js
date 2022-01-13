@@ -3,7 +3,7 @@ import { createDropdown } from "../components/view/dropdown.js"
 import { refresh } from "../components/refreshRecipe.js"
 
 /*®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®*/
-//                          FONCTIONS UTILES DU PROJET
+//                          FONCTIONS UTILES DU PROJET Algo boucle for
 /*®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®*/
 
 
