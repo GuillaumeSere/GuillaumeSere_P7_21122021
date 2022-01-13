@@ -49,7 +49,6 @@ export const refresh = () => {
                     }else{
                         recipe.display = false
                     }
-        
                 }
             }
         }

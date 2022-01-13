@@ -60,7 +60,7 @@ export var dropDownIngredientsListener = () => {
                  ingredientsToDisplay.push(filteredArray[a])
                }
            }
-            listElmt.innerHTML = ''
+            listElmt.innerHTML = ""
 
            for (var u = 0; u < ingredientsToDisplay.length; u++){
                listElmt.innerHTML += '<li class="elmt" id="' + ingredientsToDisplay[u] + '">' + ingredientsToDisplay[u] + '</li>'

@@ -56,10 +56,6 @@ header img {
     font-size: 24px;
 }
 
-.displayNone {
-    display: none;
-}
-
 .displayFlex {
     display: flex;
 }

@@ -62,7 +62,7 @@ export var dropDownAppareilListener = () => {
                 }
             }
 
-            listElmt.innerHTML = ''
+            listElmt.innerHTML = ""
 
             for (var k = 0; k < ingredientsToDisplay.length; k++) {
                 listElmt.innerHTML += '<li class="elmt" id="' + ingredientsToDisplay[k] + '">' + ingredientsToDisplay[k] + '</li>'

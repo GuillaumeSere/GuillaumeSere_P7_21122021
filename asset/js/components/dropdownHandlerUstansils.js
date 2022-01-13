@@ -63,7 +63,7 @@ export var dropDownUstansilsListener = () => {
                 }
             }
 
-            listElmt.innerHTML = ''
+            listElmt.innerHTML = ""
            
             for (var o = 0; o < ingredientsToDisplay.length; o++){
                 listElmt.innerHTML += '<li class="elmt" id="' + ingredientsToDisplay[o] + '">' + ingredientsToDisplay[o] + '</li>'
