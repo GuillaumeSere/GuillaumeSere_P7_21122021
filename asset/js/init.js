@@ -3,7 +3,7 @@ import { InputMainListener } from './../../asset/js/components/inputMainHandler.
 import { dropDownIngredientsListener } from "./../../asset/js/components/dropdownHandlerIngredients.js"
 import { dropDownUstansilsListener } from "./../../asset/js/components/dropdownHandlerUstansils.js"
 import { dropDownAppareilListener } from "./../../asset/js/components/dropdownHandlerAppareils.js"
-import { displayDropdown, displayRecipes, removeRecipes, deleteTag, tagObserver } from './utils/tools.js';
+import { displayDropdown, displayRecipes, tagObserver } from './utils/tools.js';
 
 const init = () => {
 

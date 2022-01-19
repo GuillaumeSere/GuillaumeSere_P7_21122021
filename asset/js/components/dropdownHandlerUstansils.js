@@ -7,6 +7,7 @@ import { createTag } from "../components/view/tag.js"
 //                                  DROPDOWN USTENSILES avec Algo forEach
 /*‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡ */
 
+
 export const dropDownUstansilsListener = () => {
     const dropdownContainer = document.querySelector('.dropdown--ustensiles')
     const input = document.querySelector('#inputInDropdownSalmon')

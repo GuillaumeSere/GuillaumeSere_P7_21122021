@@ -12,7 +12,7 @@ export const createDomElement = (className, DomElem) => {
     const elm = document.createElement(DomElem)
     elm.classList.add(className)
     return elm
-}
+}   
 
 /*®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®*/
 
@@ -37,7 +37,6 @@ export const removeRecipes = (data) => {
 
     data.forEach(recipe => {
         if (recipe.display == false) {
-            const card = createCardsForDom(recipe)
             zoneCards.innerHTML = ""
         }
     });

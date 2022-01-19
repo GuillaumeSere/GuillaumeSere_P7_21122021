@@ -16,7 +16,6 @@ export const refresh = () => {
                 // on va vérifier chaque ingrédient des recettes qui sont déjà affichée/sélèctionnée
                 for (let j = 0; j < recipe.ingredients.length; j++) {
                     const ingredient = recipe.ingredients[j]
-
                     if (ingredient.ingredient.toLowerCase().includes(tag.children[0].textContent.toLowerCase())) {
                         recipe.display = true
                         break
