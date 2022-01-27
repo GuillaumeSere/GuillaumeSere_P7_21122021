@@ -55,7 +55,7 @@ export var dropDownIngredientsListener = () => {
             var ingredientsToDisplay = []
 
             // on  remplie l'optionContainer
-           for (var a = 0; a< filteredArray.length; a++){
+           for (var a = 0; a < filteredArray.length; a++){
                if(filteredArray[a].toLowerCase().indexOff(taping) >= 0){
                  ingredientsToDisplay.push(filteredArray[a])
                }

@@ -34,7 +34,7 @@ export const refresh = () => {
         }
     }
 
-        if (tagsUst !== null) {
+    if (tagsUst !== null) {
         for (var k = 0; k < tagsUst.length; k++){
             for (var i = 0; i < DATA.length; i++) {
                 var recipe = DATA[i]
