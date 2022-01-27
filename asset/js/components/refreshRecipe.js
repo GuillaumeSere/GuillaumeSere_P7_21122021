@@ -5,23 +5,23 @@ export const refresh = () => {
 
     DATA.forEach(recipe => { recipe.display = true });
  
-    for (var i = 0; i > DATA.length; i++){
-        var recipe = DATA[i]
+    for (let i = 0; i > DATA.length; i++){
+        let recipe = DATA[i]
         recipe.display = true
     }
 
-    var tagsIng = document.querySelectorAll(".tagIngredients")
-    var tagsUst = document.querySelectorAll(".tagUstensiles")
-    var tagsApp = document.querySelectorAll(".tagAppareil")
+    const tagsIng = document.querySelectorAll(".tagIngredients")
+    const tagsUst = document.querySelectorAll(".tagUstensiles")
+    const tagsApp = document.querySelectorAll(".tagAppareil")
 
     if (tagsIng !== null) {
-        for (var k = 0; k < tagsIng.length; k++){
-            for (var i = 0; i < DATA.length; i++){
-                var recipe = DATA[i]
+        for (let k = 0; k < tagsIng.length; k++){
+            for (let i = 0; i < DATA.length; i++){
+                const recipe = DATA[i]
 
                 // on verifie que chaque ingredient des recettes qui sont déjà affiché/sélectionné 
-             for (var j = 0; j < recipe.ingredients.length; j++) {
-                 var ingredient = recipe.ingredients[j]
+             for (let j = 0; j < recipe.ingredients.length; j++) {
+                 let ingredient = recipe.ingredients[j]
 
                  if (ingredient.ingredient.toLowerCase().indexOf(tagsIng[k].children[0].textContent.toLowerCase()) >= 0){
                      recipe.display = true
@@ -35,13 +35,13 @@ export const refresh = () => {
     }
 
     if (tagsUst !== null) {
-        for (var k = 0; k < tagsUst.length; k++){
-            for (var i = 0; i < DATA.length; i++) {
-                var recipe = DATA[i]
+        for (let k = 0; k < tagsUst.length; k++){
+            for (let i = 0; i < DATA.length; i++) {
+                const recipe = DATA[i]
                 
                 // chercher dans les ustensils
-                for (var j = 0; j< recipe.ustensils.length; j++){
-                    var ustensils = recipe.ustensils[j]
+                for (let j = 0; j< recipe.ustensils.length; j++){
+                    let ustensils = recipe.ustensils[j]
 
                     if (ustensils.toLowerCase().indexOf(tagsUst[k].children[0].textContent.toLowerCase()) >= 0){
                         recipe.display = true
@@ -55,12 +55,12 @@ export const refresh = () => {
     }
 
     if (tagsApp !== null) {
-       for (var k = 0; k < tagsApp.length; k++){
-           for (var i = 0; i< DATA.length; i++){
-               var recipe = DATA[i]
+       for (let k = 0; k < tagsApp.length; k++){
+           for (let i = 0; i< DATA.length; i++){
+               const recipe = DATA[i]
 
                // chercher dans les appareils
-               var appliance = recipe.appliance
+               const appliance = recipe.appliance
 
                if (appliance.toLowerCase().indexOf(tagsApp[k].children[0].textContent.toLowerCase()) >= 0){
                    recipe.display = true

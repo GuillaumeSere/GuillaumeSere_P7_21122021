@@ -21,7 +21,7 @@ export function displayRecipes(data){
     const zoneCards = document.querySelector(".zoneCards")
     zoneCards.innerHTML = ""
 
-    for (var i = 0; i < data.length; i++){
+    for (let i = 0; i < data.length; i++){
         if (data[i].display == true){
             const card = createCardsForDom(data[i])
             zoneCards.append(card)
@@ -35,9 +35,8 @@ export function displayRecipes(data){
 export function removeRecipes(data){
     const zoneCards = document.querySelector(".zoneCards")
 
-   for (var i = 0; i< data.length; i++){
+   for (let i = 0; i< data.length; i++){
        if (data[i].display == false){
-           const card = createCardsForDom(data[i])
            zoneCards.innerHTML = ""
        }
    }
@@ -95,9 +94,9 @@ export function displayContentsDropdown(optionContainer, input, arrow, dropdown,
 /*®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®*/
 
 export function displayIngrediantDataIfTrue(data, tab) {
-    for (var i = 0; i < data.length; i++){
+    for (let i = 0; i < data.length; i++){
         if (data[i].display == true){
-            for (var j = 0; j < data[i].ingredients.length; j++){
+            for (let j = 0; j < data[i].ingredients.length; j++){
                 tab.push(data[i].ingredients[j].ingredient)
             }
         }
@@ -105,9 +104,9 @@ export function displayIngrediantDataIfTrue(data, tab) {
 }
 
 export function displayUstansilDataIfTrue(data, tab) {
-   for (var i = 0; i < data.length; i++){
+   for (let i = 0; i < data.length; i++){
        if (data[i].display == true){
-           for (var j = 0; j < data[i].ustensils.length; j++){
+           for (let j = 0; j < data[i].ustensils.length; j++){
                tab.push(data[i].ustensils[j])
            }
        }
@@ -115,7 +114,7 @@ export function displayUstansilDataIfTrue(data, tab) {
 }
 
 export function displayAppareilDataIfTrue(data, tab) {
-   for ( var i = 0; i < data.length; i++){
+   for (let i = 0; i < data.length; i++){
        if (data[i].display == true){
            tab.push(data[i].appliance)
        }
@@ -125,7 +124,7 @@ export function displayAppareilDataIfTrue(data, tab) {
 /*®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®*/
 
 export function deleteTag() {
-    var tags = document.querySelectorAll('.tag')
+    const tags = document.querySelectorAll('.tag')
     tags.forEach(tag => {
         const circle = tag.querySelector(".bi-x-circle")
         circle.addEventListener("click", () => {
