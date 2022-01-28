@@ -1,10 +1,10 @@
 import { DATA } from "../../../data/dataHandler.js"
-import { displayRecipes } from "../utils/tools.js"
+import { displayRecipes} from "../utils/tools.js"
 import {createCardsForDom} from "../components/view/card.js"
 
 
 /*‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡ */
-//                                  INPUT MAIN Algo boucle for
+//                                  INPUT MAIN Algo boucle foreach
 /*‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡ */
 const result = DATA
 
@@ -17,33 +17,60 @@ export const InputMainListener = () => {
     inputMain.addEventListener('input', () => {
 
         const mainInputValue = inputMain.value.toLowerCase();
-
+        // recherche dans la description
         if (mainInputValue.length > 2){
            const resultDescription = result.filter(item => item.description.toLowerCase().includes(mainInputValue.toLowerCase()))
-           const cardMessage = document.querySelector('#cardMessage')
+         
            let suggestion = "";
         
            resultDescription.forEach(resultItem => 
-                 suggestion =+ createCardsForDom(resultItem)
-               
+                 suggestion += createCardsForDom(resultItem)
              )
+             const cardMessage = document.querySelector('#cardMessage')
              displayRecipes(resultDescription)
              cardMessage.style.display = "block"
         }else{
             displayRecipes(result)
         }
-     
-        const resultName = result.filter(item => item.name.toLowerCase().includes(mainInputValue.toLowerCase()))
-        let suggestion = "";
+        // recherche dans les names
+        if (mainInputValue.length > 2){
+            const resultName = result.filter(item => item.name.toLowerCase().includes(mainInputValue.toLowerCase()))
+    
+            let suggestion = "";
 
-        resultName.forEach(resultItem => 
-            suggestion =+ createCardsForDom(resultItem)
+            resultName.forEach(resultItem => 
+                suggestion += createCardsForDom(resultItem)
             )
             displayRecipes(resultName)
-            const cardMessage = document.querySelector('#cardMessage')
-            cardMessage.style.display = "block"
+        }else{
+            displayRecipes(result)
+        }
+        // recherche dans les ingredients
+        const resultIngredient = result.filter(item => item.ingredients)
+        const filterIngredient = resultIngredient.map(item => item.ingredients)
+        
+        let suggestion = "";
 
-      console.log(resultName)
+        if (mainInputValue.length > 2){
+            filterIngredient.forEach(item => {
+                item.forEach(resultitem => {
+                    console.log(resultitem)
+                    const ingredient = resultitem.ingredient
+                    if (ingredient.toLowerCase().includes(mainInputValue.toLowerCase())){
+                        
+                        console.log(ingredient)
+                    }
+                })
+             })
+        }
+     
+
+        
+       
+            
+       
+     
+
      
 
     
