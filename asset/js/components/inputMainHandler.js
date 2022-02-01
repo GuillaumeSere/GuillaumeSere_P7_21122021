@@ -10,7 +10,7 @@ const result = DATA
 
 export const InputMainListener = () => {
     const inputMain = document.querySelector('#inputSearch')
-    
+    const cardMessage = document.querySelector('#cardMessage')
     // ===================
     //      A L'INPUT
     // ===================
@@ -23,19 +23,20 @@ export const InputMainListener = () => {
             item.name.toLowerCase().includes(mainInputValue) ||
             item.description.toLowerCase().includes(mainInputValue) ||
            item.ingredients.forEach(ingredient =>
-            ingredient.ingredient.toLowerCase().includes(mainInputValue) 
-            )
-           )
+            ingredient.ingredient.toLowerCase().includes(mainInputValue))
+           );
            let suggestion = "";
            resultInput.forEach(resultItem => 
             suggestion += createCardsForDom(resultItem)
            )
-             const cardMessage = document.querySelector('#cardMessage')
              displayRecipes(resultInput)
-             cardMessage.style.display = "none"
+             cardMessage.style.display = "block"
         }else{
             displayRecipes(result)
+            cardMessage.style.display = "none"
         }
-     
     })
 }
+
+
+
