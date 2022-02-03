@@ -46,7 +46,6 @@ export class DropDownAppareilListener {
     //      A L'INPUT
     // ===================
     this.input.addEventListener('input', () =>{
-
         // Si il y a plus de 2 caractères
         if (this.input.value.length > 2) {
             this.taping = this.input.value.toLowerCase();

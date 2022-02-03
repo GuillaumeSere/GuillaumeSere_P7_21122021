@@ -1,5 +1,5 @@
 import { DATA } from "../../../data/dataHandler.js"
-import { displayRecipes, removeDuplicateItemInArrayUstensils, displayContentsDropdown, displayUstansilDataIfTrue } from "../utils/tools.js"
+import { displayRecipes, removeDuplicateItemInArray, displayContentsDropdown, displayUstansilDataIfTrue } from "../utils/tools.js"
 import { createTag } from "../components/view/tag.js"
 
 
@@ -29,9 +29,9 @@ export class DropDownUstansilsListener {
         displayUstansilDataIfTrue(DATA, this.ust)
 
         // on retire les doublons
-        this.filteredArray = removeDuplicateItemInArrayUstensils(this.ust)
+        this.filteredArray = removeDuplicateItemInArray(this.ust)
 
-        // on le remplie l'optionContainer
+        // on  remplie l'optionContainer
         this.listElmt.innerHTML = ""
        
         for (let p = 0; p < this.filteredArray.length; p++){
@@ -46,7 +46,6 @@ export class DropDownUstansilsListener {
     //      A L'INPUT
     // ===================
     this.input.addEventListener('input', () =>{
-
         // Si il y a plus de 2 caractères
         if (this.input.value.length > 2) {
             this.taping = this.input.value.toLowerCase();
@@ -56,10 +55,10 @@ export class DropDownUstansilsListener {
             displayUstansilDataIfTrue(DATA, this.ust)
 
             // on retire les doublons
-            this.filteredArray = removeDuplicateItemInArrayUstensils(this.ust)
+            this.filteredArray = removeDuplicateItemInArray(this.ust)
             this.ingredientsToDisplay = []
 
-            // on le remplie l'optionContainer
+            // on  remplie l'optionContainer
             for (let n = 0; n < this.filteredArray.length; n++){
                 if (this.filteredArray[n].toLowerCase().indexOff(this.taping) >= 0){
                     this.ingredientsToDisplay.push(this.filteredArray[n])
@@ -81,7 +80,7 @@ export class DropDownUstansilsListener {
             displayUstansilDataIfTrue(DATA, this.ust)
 
             // on retire les doublons
-            this.filteredArray = removeDuplicateItemInArrayUstensils(this.ust)
+            this.filteredArray = removeDuplicateItemInArray(this.ust)
             this.listElmt.innerHTML = ""
 
             // on  remplie l'optionContainer

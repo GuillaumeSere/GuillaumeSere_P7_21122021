@@ -83,7 +83,7 @@ export class DropDownIngredientsListener {
             this.filteredArray = removeDuplicateItemInArray(this.ingred)
             this.listElmt.innerHTML = ""
 
-            // on le remplie l'optionContainer
+            // on  remplie l'optionContainer
            for (let t = 0; t < this.filteredArray.length; t++){
                this.listElmt.innerHTML += '<li class="elmt" id="' + this.filteredArray[t] + '">' + this.filteredArray[t] + '</li>'
            }
