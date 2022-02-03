@@ -7,111 +7,116 @@ import { createTag } from "../components/view/tag.js"
 //                                  DROPDOWN APPAREIL Algo boucle for
 /*‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡‡ */
 
-export var dropDownAppareilListener = () => {
-    const dropdownContainer = document.querySelector('.dropdown--appareil')
-    const input = document.querySelector('#inputInDropdownGreen')
-    const optionContainer = document.querySelector('.optionContainer2')
-    const arrow = dropdownContainer.querySelector('.bi-chevron-down')
-    const listElmt = document.querySelector('.listElmt2')
-    const zoneTag = document.querySelector(".zoneTag")
-
+export class DropDownAppareilListener {
+    constructor(){
+        this.dropdownContainer = document.querySelector('.dropdown--appareil')
+        this.input = document.querySelector('#inputInDropdownGreen')
+        this.optionContainer = document.querySelector('.optionContainer2')
+        this.arrow = this.dropdownContainer.querySelector('.bi-chevron-down')
+        this.listElmt = document.querySelector('.listElmt2')
+        this.zoneTag = document.querySelector(".zoneTag")
+        this.appareilSearch();
+    }
+  
     // ===================
     //      AU CLICK
     // ===================
-    dropdownContainer.addEventListener('click', function() {
-        const app = []
+   appareilSearch = () => {
+    this.dropdownContainer.addEventListener('click', () =>{
+        this.app = []
 
         // on récupère tous les ingrédients des recettes qui sont  uniquement en display = true
-        displayAppareilDataIfTrue(DATA, app)
+        displayAppareilDataIfTrue(DATA, this.app)
 
         // on retire les doublons
-        const filteredArray = removeDuplicateItemInArray(app)
+        this.filteredArray = removeDuplicateItemInArray(this.app)
 
         // on remplie l'optionContainer
-        listElmt.innerHTML = ""
+        this.listElmt.innerHTML = ""
 
-        for (let l = 0; l < filteredArray.length; l++) {
-            listElmt.innerHTML += '<li class="elmt" id="' + filteredArray[l] + '">' + filteredArray[l] + '</li>'
+        for (let l = 0; l < this.filteredArray.length; l++) {
+            this.listElmt.innerHTML += '<li class="elmt" id="' + this.filteredArray[l] + '">' + this.filteredArray[l] + '</li>'
         }
 
         // on affiche l'optionContainer
-        displayContentsDropdown(optionContainer, input, arrow, dropdownContainer, 250)
+        displayContentsDropdown(this.optionContainer, this.input, this.arrow, this.dropdownContainer, 250)
     })
 
     // ===================
     //      A L'INPUT
     // ===================
-    input.addEventListener('input', function() {
+    this.input.addEventListener('input', () =>{
 
         // Si il y a plus de 2 caractères
-        if (input.value.length > 2) {
-            const taping = input.value.toLowerCase();
-            const app = []
+        if (this.input.value.length > 2) {
+            this.taping = this.input.value.toLowerCase();
+            this.app = []
 
             // on récupère tous les ingrédients des recettes qui sont  uniquement en display = true
-            displayAppareilDataIfTrue(DATA, app)
+            displayAppareilDataIfTrue(DATA, this.app)
 
             // on retire les doublons
-            const filteredArray = removeDuplicateItemInArray(app)
-            const ingredientsToDisplay = []
+            this.filteredArray = removeDuplicateItemInArray(this.app)
+            this.ingredientsToDisplay = []
 
             // on remplie l'optionContainer
-            for (let p = 0; p < filteredArray.length; p++) {
-                if (filteredArray[p].toLowerCase().indexOf(taping) >= 0) {
-                    ingredientsToDisplay.push(filteredArray[p])
+            for (let p = 0; p < this.filteredArray.length; p++) {
+                if (this.filteredArray[p].toLowerCase().indexOf(this.taping) >= 0) {
+                    this.ingredientsToDisplay.push(this.filteredArray[p])
                 }
             }
 
-            listElmt.innerHTML = ""
+            this.listElmt.innerHTML = ""
 
-            for (let k = 0; k < ingredientsToDisplay.length; k++) {
-                listElmt.innerHTML += '<li class="elmt" id="' + ingredientsToDisplay[k] + '">' + ingredientsToDisplay[k] + '</li>'
+            for (let k = 0; k < this.ingredientsToDisplay.length; k++) {
+                this.listElmt.innerHTML += '<li class="elmt" id="' + this.ingredientsToDisplay[k] + '">' + this.ingredientsToDisplay[k] + '</li>'
             }
 
         } else {
 
             // si y'a moins de 2 caractères
-            let app = []
+            this.app = []
 
             // on récupère tous les ingrédients des recettes qui sont  uniquement en display = true
-            displayAppareilDataIfTrue(DATA, app)
+            displayAppareilDataIfTrue(DATA, this.app)
 
             // on retire les doublons
-            let filteredArray = removeDuplicateItemInArray(app)
-            listElmt.innerHTML = ""
+            this.filteredArray = removeDuplicateItemInArray(this.app)
+            this.listElmt.innerHTML = ""
 
             // on remplie l'optionContainer
-            for (let n = 0; n < filteredArray.length; n++) {
-                listElmt.innerHTML += '<li class="elmt" id="' + filteredArray[n] + '">' + filteredArray[n] + '</li>'
+            for (let n = 0; n < this.filteredArray.length; n++) {
+                this.listElmt.innerHTML += '<li class="elmt" id="' + this.filteredArray[n] + '">' + this.filteredArray[n] + '</li>'
             }
         }
 
     })
 
     // quand on click sur un <li> ça crée un tag
-    listElmt.addEventListener("click", function(e) {
-        const selectedTag = e.target.innerHTML
-        const tag = createTag(e.target.innerHTML, "Appareil")
-        zoneTag.innerHTML += tag
+    this.listElmt.addEventListener("click", (e) =>{
+        this.selectedTag = e.target.innerHTML
+        this.tag = createTag(e.target.innerHTML, "Appareil")
+        this.zoneTag.innerHTML += this.tag
 
         // modifier les data pour mettre a display false les recettes qui n'ont pas le e.target.innerHTML (tag) pour chaque recette
         for (let i = 0; i < DATA.length; i++) {
-            const recipe = DATA[i]
+           this.recipe = DATA[i]
 
             // on va vérifier chaque ingrédient des recettes qui sont déjà affichée/sélèctionnée
-            if (recipe.display == true) {
-                for (let j = 0; j < recipe.appliance.length; j++) {
-                    const appareil = recipe.appliance
+            if (this.recipe.display == true) {
+                for (let j = 0; j < this.recipe.appliance.length; j++) {
+                    this.appareil = this.recipe.appliance
 
-                    if (appareil.toLowerCase() === selectedTag.toLowerCase()) {
-                        recipe.display = true
+                    if (this.appareil.toLowerCase() === this.selectedTag.toLowerCase()) {
+                        this.recipe.display = true
                         break
                     } else {
-                        recipe.display = false
+                        this.recipe.display = false
                     }
                 }
             }
         }
         displayRecipes(DATA)
     })
+}
 }
