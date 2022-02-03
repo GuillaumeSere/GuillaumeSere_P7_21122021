@@ -9,7 +9,7 @@ const init = () => {
 
     displayRecipes(DATA);
     displayDropdown()
-    InputMainListener()
+    new InputMainListener()
     dropDownIngredientsListener()
     dropDownUstansilsListener()
     dropDownAppareilListener()
