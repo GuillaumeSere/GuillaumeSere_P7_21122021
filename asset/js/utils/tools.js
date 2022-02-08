@@ -31,19 +31,6 @@ export function displayRecipes(data){
 
 /*®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®*/
 
-// Fonction qui permet de fermer une fenêtre
-export function removeRecipes(data){
-    const zoneCards = document.querySelector(".zoneCards")
-
-   for (let i = 0; i< data.length; i++){
-       if (data[i].display == false){
-           zoneCards.innerHTML = ""
-       }
-   }
-}
-
-/*®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®*/
-
 // Fonction qui permet d'ouvrir une fenêtre
 export function displayDropdown() {
     const zoneDropdown = document.querySelector(".zoneDropdown")
