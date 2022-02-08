@@ -6,7 +6,6 @@ import { refresh } from "../components/refreshRecipe.js"
 //                          FONCTIONS UTILES DU PROJET
 /*®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®*/
 
-
 // Créer un DOM Element
 export const createDomElement = (className, DomElem) => {
     const elm = document.createElement(DomElem)
@@ -25,19 +24,6 @@ export const displayRecipes = (data) => {
         if (recipe.display == true) {
             const card = createCardsForDom(recipe)
             zoneCards.append(card)
-        }
-    });
-}
-
-/*®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®®*/
-
-// Fonction qui permet de fermer une fenêtre
-export const removeRecipes = (data) => {
-    const zoneCards = document.querySelector(".zoneCards")
-
-    data.forEach(recipe => {
-        if (recipe.display == false) {
-            zoneCards.innerHTML = ""
         }
     });
 }
