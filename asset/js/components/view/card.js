@@ -4,6 +4,7 @@ export function createCardsForDom(recipe) {
 
     const cardContainer = createDomElement("cardContainer", "div");
     const cardImg = createDomElement("cardImg", "div");
+    const image = document.createElement("img");
     const cardBox = createDomElement("cardBox", "div");
     const bodyCard = createDomElement("bodyCard", "div");
     const titleTimeCard = createDomElement("titleTimeCard", "div");
@@ -16,7 +17,7 @@ export function createCardsForDom(recipe) {
     const cardResume = createDomElement("cardResume", "div");
     const resume = createDomElement("resume", "p");
     
-    cardImg.classList.add("bg-secondary")
+    image.src = recipe.image
     clock.classList.add("bi-clock")
     
     titleCard.innerHTML = recipe.name
@@ -24,6 +25,7 @@ export function createCardsForDom(recipe) {
     resume.innerHTML = recipe.description + "."
     
     cardContainer.append(cardImg)
+    cardImg.append(image)
     cardContainer.append(cardBox)
     cardBox.append(bodyCard)
     bodyCard.append(titleTimeCard)
